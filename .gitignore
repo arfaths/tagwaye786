@@ -1,3 +1,6 @@
+# Monorepo-level .gitignore
+# This file covers project-wide ignores. App-specific ignores are in apps/*/.gitignore
+
 # Dependencies
 node_modules/
 .pnp
@@ -36,10 +39,8 @@ storybook-static/
 *.swp
 *.swo
 *~
-.DS_Store
-Thumbs.db
 
-# OS
+# OS files
 .DS_Store
 .DS_Store?
 ._*
@@ -47,6 +48,7 @@ Thumbs.db
 .Trashes
 ehthumbs.db
 Desktop.ini
+Thumbs.db
 
 # Vercel
 .vercel
@@ -64,8 +66,7 @@ next-env.d.ts
 # yarn.lock
 # pnpm-lock.yaml
 
-# Storybook
-storybook-static/
+# Storybook (additional patterns)
 .storybook-out/
 
 # Playwright

@@ -1,3 +1,6 @@
+# Next.js app-specific .gitignore
+# This file covers Next.js-specific ignores for the tagwaye-portal app.
+# Monorepo-level ignores are in the root .gitignore file.
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
@@ -21,7 +24,6 @@
 /build
 
 # misc
-.DS_Store
 *.pem
 
 # debug
@@ -41,4 +43,3 @@ yarn-error.log*
 next-env.d.ts
 
 *storybook.log
-storybook-static

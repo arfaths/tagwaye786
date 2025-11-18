@@ -4,8 +4,7 @@
   "private": true,
   "description": "Monorepo for Tagwaye platform",
   "workspaces": [
-    "apps/*",
-    "packages/*"
+    "apps/*"
   ],
   "scripts": {
     "dev": "npm run dev --workspace apps/tagwaye-portal",

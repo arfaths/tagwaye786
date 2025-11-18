@@ -1,3 +1,25 @@
+<#
+.SYNOPSIS
+    Quick Git initialization script for Tagwaye project.
+
+.DESCRIPTION
+    This script provides a non-interactive way to quickly initialize a Git repository,
+    stage all files, and create an initial commit. Use this when you want a fast setup
+    without user prompts.
+
+.PARAMETER None
+    This script takes no parameters.
+
+.EXAMPLE
+    .\init-git.ps1
+
+.NOTES
+    - Automatically detects Git installation
+    - Non-interactive (no user prompts)
+    - Creates initial commit with predefined message
+    - For interactive setup with user configuration, use setup-git.ps1 instead
+
+#>
 # Quick Git Initialization Script
 # Run: .\init-git.ps1
 

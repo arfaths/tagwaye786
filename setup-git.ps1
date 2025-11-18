@@ -1,4 +1,32 @@
-# Tagwaye Git Setup Script
+<#
+.SYNOPSIS
+    Comprehensive Git setup script for Tagwaye project (RECOMMENDED).
+
+.DESCRIPTION
+    This is the recommended script for setting up Git in the Tagwaye project.
+    It provides an interactive setup experience with user prompts for Git configuration.
+    Features include:
+    - Git installation detection
+    - Interactive user identity configuration
+    - Repository initialization
+    - File staging and initial commit
+    - Status verification
+
+.PARAMETER None
+    This script takes no parameters.
+
+.EXAMPLE
+    .\setup-git.ps1
+
+.NOTES
+    - Interactive script with user prompts
+    - Checks and configures Git user identity if needed
+    - Shows repository status after setup
+    - For quick non-interactive setup, use init-git.ps1 instead
+    - For status verification only, use verify-git.ps1
+
+#>
+# Tagwaye Git Setup Script (RECOMMENDED)
 # Run this script from the project root: .\setup-git.ps1
 
 Write-Host "=== Tagwaye Git Setup ===" -ForegroundColor Cyan

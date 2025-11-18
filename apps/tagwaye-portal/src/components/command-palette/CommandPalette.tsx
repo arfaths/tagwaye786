@@ -11,6 +11,7 @@ import {
   Wand2,
 } from "lucide-react";
 import { useCommandPalette } from "./CommandPaletteProvider";
+import { useDebounce } from "@/hooks/useDebounce";
 
 type CommandGroup = {
   label: string;
@@ -74,13 +75,16 @@ const baseGroups: CommandGroup[] = [
 export function CommandPalette() {
   const { open, setOpen } = useCommandPalette();
   const [query, setQuery] = useState("");
+  
+  // Debounce search query (300ms per spec)
+  const debouncedQuery = useDebounce(query, 300);
 
   const results = useMemo(() => {
-    if (!query.trim()) {
+    if (!debouncedQuery.trim()) {
       return baseGroups;
     }
 
-    const lower = query.toLowerCase();
+    const lower = debouncedQuery.toLowerCase();
     return baseGroups
       .map((group) => ({
         ...group,
@@ -89,7 +93,7 @@ export function CommandPalette() {
         ),
       }))
       .filter((group) => group.items.length > 0);
-  }, [query]);
+  }, [debouncedQuery]);
 
   return (
     <Dialog.Root open={open} onOpenChange={setOpen}>
@@ -104,8 +108,9 @@ export function CommandPalette() {
               onChange={(event) => setQuery(event.target.value)}
               placeholder="Jump to space, person, decision, or time…"
               className="flex-1 bg-transparent text-sm text-white placeholder:text-white/50 focus:outline-none"
+              style={{ fontSize: "var(--font-size-sm)" }}
             />
-            <kbd className="flex items-center gap-1 rounded-md border border-white/10 px-2 py-1 text-[10px] uppercase tracking-wide text-white/60">
+            <kbd className="flex items-center gap-1 rounded-md border border-white/10 px-2 py-1 text-xs uppercase tracking-wide text-white/60" style={{ fontSize: "var(--font-size-xs)", letterSpacing: "var(--letter-spacing-wide)" }}>
               <Command className="h-3 w-3" />
               K
             </kbd>
@@ -113,13 +118,13 @@ export function CommandPalette() {
 
           <div className="mt-4 max-h-[360px] space-y-4 overflow-y-auto pr-2">
             {results.length === 0 && (
-              <p className="text-sm text-white/40">
+              <p className="text-sm text-white/40" style={{ fontSize: "var(--font-size-sm)" }}>
                 No matches yet—try a different query or ask Sage.
               </p>
             )}
             {results.map((group) => (
               <Fragment key={group.label}>
-                <p className="text-xs uppercase tracking-[0.2em] text-white/50">
+                <p className="text-xs uppercase tracking-wide text-white/50" style={{ fontSize: "var(--font-size-xs)", letterSpacing: "var(--letter-spacing-wide)" }}>
                   {group.label}
                 </p>
                 <div className="space-y-2">
@@ -134,10 +139,10 @@ export function CommandPalette() {
                         {item.icon}
                       </div>
                       <div className="flex-1">
-                        <p className="text-sm font-medium text-white">
+                        <p className="text-sm font-medium text-white" style={{ fontSize: "var(--font-size-sm)", fontWeight: "var(--font-weight-medium)" }}>
                           {item.title}
                         </p>
-                        <p className="text-xs text-white/60">{item.meta}</p>
+                        <p className="text-xs text-white/60" style={{ fontSize: "var(--font-size-xs)" }}>{item.meta}</p>
                       </div>
                       <ArrowUpRight className="h-4 w-4 text-white/30 transition group-hover:text-white" />
                     </button>

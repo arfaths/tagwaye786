@@ -1,3 +1,24 @@
+<#
+.SYNOPSIS
+    Git repository status verification script for Tagwaye project.
+
+.DESCRIPTION
+    This script checks the current status of the Git repository without making
+    any changes. Use this to verify your Git setup or check repository state.
+
+.PARAMETER None
+    This script takes no parameters.
+
+.EXAMPLE
+    .\verify-git.ps1
+
+.NOTES
+    - Read-only script (no changes made)
+    - Shows repository status, recent commits, and current branch
+    - Useful for verifying setup after running init-git.ps1 or setup-git.ps1
+    - For initial setup, use setup-git.ps1 (recommended) or init-git.ps1
+
+#>
 # Verify Git Setup
 Write-Host "=== Git Repository Status ===" -ForegroundColor Cyan
 Write-Host ""

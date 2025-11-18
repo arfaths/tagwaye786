@@ -238,3 +238,41 @@ export async function fetchSystemStatus(
   );
 }
 
+export type RecentProject = {
+  id: string;
+  name: string;
+  status: "live" | "offline" | "syncing";
+};
+
+export async function fetchRecentProjects(): Promise<RecentProject[]> {
+  // Mock recent projects list
+  const projects: RecentProject[] = [
+    {
+      id: "proj_livingtwin_campus",
+      name: "Tagwaye LivingTwin Campus",
+      status: "live",
+    },
+    {
+      id: "proj_distribution_center",
+      name: "Distribution Center",
+      status: "live",
+    },
+    {
+      id: "proj_corporate_hq",
+      name: "Corporate HQ",
+      status: "syncing",
+    },
+    {
+      id: "proj_warehouse_alpha",
+      name: "Warehouse Alpha",
+      status: "offline",
+    },
+    {
+      id: "proj_retail_outlet",
+      name: "Retail Outlet",
+      status: "live",
+    },
+  ];
+  return simulateLatency(projects, 200);
+}
+

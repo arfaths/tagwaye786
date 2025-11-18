@@ -6,6 +6,7 @@ import { Sidebar } from "@/components/chrome/Sidebar";
 import { Panel } from "@/components/chrome/Panel";
 import { Timeline } from "@/components/chrome/Timeline";
 import { Footer } from "@/components/chrome/Footer";
+import { KeyboardShortcutsHelp } from "@/components/shared/KeyboardShortcutsHelp";
 import { useLayoutStore } from "@/state/layout-store";
 
 export default function DashboardLayout({ children }: { children: ReactNode }) {
@@ -16,13 +17,14 @@ export default function DashboardLayout({ children }: { children: ReactNode }) {
     panelWidth,
     timelineVisible,
     timelineExpanded,
+    timelineHeight: storeTimelineHeight,
   } = useLayoutStore();
 
   const sidebarWidth = sidebarPinned || sidebarExpanded ? 280 : 64;
   const resolvedPanelWidth = panelOpen ? panelWidth : 0;
   const timelineHeight = timelineVisible
     ? timelineExpanded
-      ? 320
+      ? storeTimelineHeight
       : 48
     : 0;
 
@@ -40,6 +42,7 @@ export default function DashboardLayout({ children }: { children: ReactNode }) {
       <Panel />
       <Timeline />
       <Footer />
+      <KeyboardShortcutsHelp />
     </div>
   );
 }

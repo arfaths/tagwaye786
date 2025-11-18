@@ -1,5 +1,7 @@
 # Tagwaye Quality Gates
 
+> **Note:** This is a concise release checklist. For detailed tooling setup and implementation guide, see [`docs/quality/quality-gates.md`](../quality/quality-gates.md).
+
 ## 1. Static Analysis
 - `npm run lint` (Next.js + eslint-config-next/core-web-vitals) enforced in CI.
 - `npm run typecheck` (tsc `--noEmit`) ensures route groups & shared types stay sound.

@@ -1,36 +1,75 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Tagwaye Portal
 
-## Getting Started
+The frontend application for the Tagwaye Decision Intelligence Platform.
 
-First, run the development server:
+> **Note:** For complete project documentation, see the [root README](../../README.md).
+
+## Quick Start
+
+From the project root:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Or from this directory:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+cd apps/tagwaye-portal
+npm install
+npm run dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Visit `http://localhost:3000` to see the application.
 
-## Learn More
+## Available Scripts
 
-To learn more about Next.js, take a look at the following resources:
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run start` - Start production server
+- `npm run lint` - Run ESLint
+- `npm run storybook` - Launch Storybook
+- `npm run build-storybook` - Build Storybook for static hosting
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Tech Stack
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- **Framework:** Next.js 16.0.3 (App Router)
+- **UI Library:** React 19
+- **Styling:** Tailwind CSS v4
+- **Animations:** Framer Motion
+- **State Management:** Zustand
+- **Data Fetching:** React Query (TanStack Query)
+- **3D Rendering:** @thatopen/fragments (FRAG engine), Three.js
+- **Charts:** ECharts
+- **Icons:** Lucide React
+- **Components:** Radix UI
 
-## Deploy on Vercel
+## Project Structure
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```
+apps/tagwaye-portal/
+├── src/
+│   ├── app/              # Next.js App Router pages and layouts
+│   ├── components/       # React components
+│   │   ├── chrome/       # Layout chrome (Header, Sidebar, Footer, etc.)
+│   │   ├── canvas/      # 3D canvas components
+│   │   ├── panel/       # Panel drawer system
+│   │   └── ...
+│   ├── hooks/           # Custom React hooks
+│   ├── state/           # Zustand stores
+│   ├── utils/           # Utility functions
+│   └── styles/          # Global styles and design tokens
+├── public/              # Static assets
+└── src/stories/         # Storybook stories
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Development
+
+This is a Next.js application using the App Router. Key features:
+
+- **Six-zone layout** with CSS Grid
+- **Design token system** (zero hardcoded values)
+- **Accessibility** - WCAG 2.1 Level AA compliant
+- **Performance** - 60fps animations, optimized rendering
+
+For detailed documentation, see the [root README](../../README.md).

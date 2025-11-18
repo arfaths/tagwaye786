@@ -1,0 +1,516 @@
+/**
+ * Tagwaye Design Token System
+ * 
+ * All design values must use these tokens - NO HARDCODED VALUES
+ * This ensures consistency, themability, and maintainability.
+ * 
+ * Version: 1.0
+ * Date: November 17, 2025
+ */
+
+:root {
+  /* ============================================
+     LAYOUT DIMENSIONS
+     ============================================ */
+  
+  /* Zone Heights */
+  --header-height: 56px;
+  --footer-height: 40px;
+  --timeline-height-collapsed: 48px;
+  --timeline-height-expanded: 320px;
+  
+  /* Zone Widths */
+  --sidebar-width-collapsed: 64px;
+  --sidebar-width-expanded: 280px;
+  --panel-width-standard: 400px;
+  --panel-width-expanded: 600px;
+  --panel-width-min: 280px;
+  --panel-width-max: 600px;
+  
+  /* Canvas Constraints */
+  --canvas-min-width: 1080px;
+  --canvas-min-height: 600px;
+  
+  /* Search Field */
+  --search-field-min-width: 320px;
+  
+  /* ============================================
+     SPACING SCALE
+     ============================================ */
+  
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 12px;
+  --space-lg: 16px;
+  --space-xl: 24px;
+  --space-2xl: 32px;
+  
+  /* ============================================
+     COLOR SYSTEM - LIGHT THEME
+     ============================================ */
+  
+  /* Background Colors */
+  --color-bg-primary: #ffffff;
+  --color-bg-secondary: #f5f5f7;
+  --color-bg-tertiary: #e8e8ed;
+  --color-surface: #ffffff;
+  --color-surface-translucent: rgba(255, 255, 255, 0.8);
+  
+  /* Border Colors */
+  --color-border: #d2d2d7;
+  --color-border-subtle: rgba(210, 210, 215, 0.5);
+  
+  /* Text Colors */
+  --color-text-primary: #1d1d1f;
+  --color-text-secondary: #86868b;
+  --color-text-tertiary: #aeaeae;
+  
+  /* Semantic Colors */
+  --color-accent: #0071e3;
+  --color-success: #34c759;
+  --color-warning: #ff9500;
+  --color-error: #ff3b30;
+  --color-info: #0071e3;
+  
+  /* Semantic Colors with Opacity (for inline styles) */
+  --color-accent-04: rgba(0, 113, 227, 0.04);
+  --color-accent-06: rgba(0, 113, 227, 0.06);
+  --color-accent-08: rgba(0, 113, 227, 0.08);
+  --color-accent-10: rgba(0, 113, 227, 0.1);
+  --color-accent-12: rgba(0, 113, 227, 0.12);
+  --color-accent-20: rgba(0, 113, 227, 0.2);
+  --color-success-10: rgba(52, 199, 89, 0.1);
+  --color-warning-10: rgba(255, 149, 0, 0.1);
+  --color-error-10: rgba(255, 59, 48, 0.1);
+  
+  /* Overlay Colors */
+  --overlay-dark-30: rgba(0, 0, 0, 0.3);
+  --overlay-dark-90: rgba(0, 0, 0, 0.9);
+  
+  /* Dimension Colors (4D-8D) */
+  --dimension-4d-color: #007aff;
+  --dimension-5d-color: #34c759;
+  --dimension-6d-color: #30d158;
+  --dimension-7d-color: #ff9500;
+  --dimension-8d-color: #ff453a;
+  
+  /* Status Colors */
+  --color-status-live: #34c759;
+  --color-status-offline: #86868b;
+  --color-status-syncing: #ff9500;
+  
+  /* ============================================
+     COLOR SYSTEM - DARK THEME
+     ============================================ */
+  
+  [data-theme="dark"] {
+    /* Background Colors */
+    --color-bg-primary: #000000;
+    --color-bg-secondary: #1c1c1e;
+    --color-bg-tertiary: #2c2c2e;
+    --color-surface: #1c1c1e;
+    --color-surface-translucent: rgba(28, 28, 30, 0.8);
+    
+    /* Border Colors */
+    --color-border: #38383a;
+    --color-border-subtle: rgba(56, 56, 58, 0.5);
+    
+    /* Text Colors */
+    --color-text-primary: #f5f5f7;
+    --color-text-secondary: #98989d;
+    --color-text-tertiary: #6e6e73;
+    
+    /* Semantic Colors (same as light theme) */
+    --color-accent: #0071e3;
+    --color-success: #34c759;
+    --color-warning: #ff9500;
+    --color-error: #ff3b30;
+    --color-info: #0071e3;
+    
+    /* Dimension Colors (same as light theme) */
+    --dimension-4d-color: #007aff;
+    --dimension-5d-color: #34c759;
+    --dimension-6d-color: #30d158;
+    --dimension-7d-color: #ff9500;
+    --dimension-8d-color: #ff453a;
+    
+    /* Status Colors (same as light theme) */
+    --color-status-live: #34c759;
+    --color-status-offline: #98989d;
+    --color-status-syncing: #ff9500;
+  }
+  
+  /* ============================================
+     TYPOGRAPHY SCALE
+     ============================================ */
+  
+  /* Font Family */
+  --font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", system-ui, sans-serif;
+  --font-family-mono: "SF Mono", Monaco, "Cascadia Code", "Roboto Mono", Consolas, monospace;
+  
+  /* Font Sizes (exact spec values) */
+  --font-size-xs: 11px;
+  --font-size-sm: 13px;
+  --font-size-base: 15px;
+  --font-size-lg: 17px;
+  
+  /* Font Weights */
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  
+  /* Line Heights */
+  --line-height-tight: 1.2;
+  --line-height-normal: 1.4;
+  --line-height-relaxed: 1.6;
+  
+  /* Letter Spacing */
+  --letter-spacing-tight: -0.02em;
+  --letter-spacing-normal: 0;
+  --letter-spacing-wide: 0.3em;
+  
+  /* ============================================
+     MOTION & ANIMATION
+     ============================================ */
+  
+  /* Durations */
+  --duration-instant: 0ms;
+  --duration-fast: 150ms;
+  --duration-normal: 250ms;
+  --duration-slow: 350ms;
+  --duration-slower: 500ms;
+  
+  /* Easing Curves */
+  --easing-standard: cubic-bezier(0.4, 0.0, 0.2, 1);
+  --easing-decelerate: cubic-bezier(0.0, 0.0, 0.2, 1);
+  --easing-accelerate: cubic-bezier(0.4, 0.0, 1, 1);
+  --easing-sharp: cubic-bezier(0.4, 0.0, 0.6, 1);
+  
+  /* Spring Physics (for Framer Motion) */
+  --spring-stiffness: 300;
+  --spring-damping: 30;
+  
+  /* ============================================
+     Z-INDEX SCALE
+     ============================================ */
+  
+  --z-index-base: 0;
+  --z-index-dropdown: 100;
+  --z-index-sticky: 200;
+  --z-index-overlay: 300;
+  --z-index-modal: 400;
+  --z-index-popover: 500;
+  --z-index-tooltip: 600;
+  --z-index-timeline: 150;
+  --z-index-panel: 200;
+  --z-index-footer: 900;
+  --z-index-header: 1000;
+  
+  /* ============================================
+     SHADOWS & EFFECTS
+     ============================================ */
+  
+  /* Shadows */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+  --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.15);
+  --shadow-soft: 0 10px 30px rgba(3, 102, 214, 0.25);
+  
+  /* Backdrop Blur */
+  --blur-sm: 8px;
+  --blur-md: 16px;
+  --blur-lg: 20px;
+  --blur-xl: 24px;
+  
+  /* ============================================
+     BORDER RADIUS
+     ============================================ */
+  
+  --radius-none: 0;
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+  --radius-xl: 12px;
+  --radius-2xl: 16px;
+  --radius-full: 9999px;
+  
+  /* ============================================
+     INTERACTIVE ELEMENTS
+     ============================================ */
+  
+  /* Button Heights */
+  --button-height-sm: 32px;
+  --button-height-md: 40px;
+  --button-height-lg: 44px;
+  
+  /* Input Heights */
+  --input-height-sm: 32px;
+  --input-height-md: 40px;
+  --input-height-lg: 44px;
+  
+  /* Touch Targets (Accessibility) */
+  --touch-target-min: 40px;
+  --touch-target-comfortable: 44px;
+  
+  /* Focus Indicators */
+  --focus-ring-width: 2px;
+  --focus-ring-color: var(--color-accent);
+  --focus-ring-offset: 2px;
+  
+  /* ============================================
+     CHROME-SPECIFIC TOKENS
+     ============================================ */
+  
+  /* Legacy compatibility (will be replaced) */
+  --chrome-bg: var(--color-bg-primary);
+  --chrome-surface: var(--color-surface-translucent);
+  --chrome-border: var(--color-border);
+  --text-primary: var(--color-text-primary);
+  --text-secondary: var(--color-text-secondary);
+  --sidebar-width: var(--sidebar-width-collapsed);
+  --panel-width: var(--panel-width-standard);
+  --timeline-height: var(--timeline-height-collapsed);
+  --header-height: var(--header-height);
+  --footer-height: var(--footer-height);
+}
+
+/* ============================================
+   TYPOGRAPHY UTILITY CLASSES
+   ============================================ */
+
+/* Font Sizes (exact spec values) */
+.text-xs {
+  font-size: var(--font-size-xs);
+  line-height: var(--line-height-normal);
+}
+
+.text-sm {
+  font-size: var(--font-size-sm);
+  line-height: var(--line-height-normal);
+}
+
+.text-base {
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-normal);
+}
+
+.text-lg {
+  font-size: var(--font-size-lg);
+  line-height: var(--line-height-normal);
+}
+
+/* Font Weights */
+.font-regular {
+  font-weight: var(--font-weight-regular);
+}
+
+.font-medium {
+  font-weight: var(--font-weight-medium);
+}
+
+.font-semibold {
+  font-weight: var(--font-weight-semibold);
+}
+
+.font-bold {
+  font-weight: var(--font-weight-bold);
+}
+
+/* Letter Spacing */
+.tracking-tight {
+  letter-spacing: var(--letter-spacing-tight);
+}
+
+.tracking-normal {
+  letter-spacing: var(--letter-spacing-normal);
+}
+
+.tracking-wide {
+  letter-spacing: var(--letter-spacing-wide);
+}
+
+/* Line Heights */
+.leading-tight {
+  line-height: var(--line-height-tight);
+}
+
+.leading-normal {
+  line-height: var(--line-height-normal);
+}
+
+.leading-relaxed {
+  line-height: var(--line-height-relaxed);
+}
+
+/* ============================================
+   TRANSITION UTILITY CLASSES
+   ============================================ */
+
+/* Base transition class */
+.transition-base {
+  transition-property: color, background-color, border-color, opacity, transform;
+  transition-timing-function: var(--easing-standard);
+  transition-duration: var(--duration-normal);
+}
+
+/* Fast transitions (150ms) */
+.transition-fast {
+  transition-property: color, background-color, border-color, opacity, transform;
+  transition-timing-function: var(--easing-standard);
+  transition-duration: var(--duration-fast);
+}
+
+/* Slow transitions (350ms) */
+.transition-slow {
+  transition-property: color, background-color, border-color, opacity, transform;
+  transition-timing-function: var(--easing-standard);
+  transition-duration: var(--duration-slow);
+}
+
+/* Color transitions (for hover states) */
+.transition-colors {
+  transition-property: color, background-color, border-color;
+  transition-timing-function: var(--easing-standard);
+  transition-duration: var(--duration-fast);
+}
+
+/* Transform transitions (for scale, rotate, translate) */
+.transition-transform {
+  transition-property: transform;
+  transition-timing-function: var(--easing-standard);
+  transition-duration: var(--duration-normal);
+}
+
+/* Opacity transitions */
+.transition-opacity {
+  transition-property: opacity;
+  transition-timing-function: var(--easing-standard);
+  transition-duration: var(--duration-fast);
+}
+
+/* All properties (for complex animations) */
+.transition-all {
+  transition-property: all;
+  transition-timing-function: var(--easing-standard);
+  transition-duration: var(--duration-normal);
+}
+
+/* Icon transitions (for rotate, scale) */
+.transition-icon {
+  transition-property: transform, color;
+  transition-timing-function: var(--easing-standard);
+  transition-duration: var(--duration-fast);
+}
+
+/* Button hover states */
+.button-hover {
+  transition-property: background-color, color, border-color, transform;
+  transition-timing-function: var(--easing-standard);
+  transition-duration: var(--duration-fast);
+}
+
+.button-hover:hover {
+  transform: translateY(-1px);
+}
+
+.button-hover:active {
+  transform: translateY(0);
+  transition-duration: var(--duration-instant);
+}
+
+/* Loading state animations */
+@keyframes loading-pulse {
+  0%, 100% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+@keyframes loading-shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+.loading-pulse {
+  animation: loading-pulse 1.5s ease-in-out infinite;
+}
+
+.loading-skeleton {
+  background: linear-gradient(
+    90deg,
+    var(--color-bg-secondary) 0%,
+    var(--color-bg-tertiary) 50%,
+    var(--color-bg-secondary) 100%
+  );
+  background-size: 1000px 100%;
+  animation: loading-shimmer 2s linear infinite;
+}
+
+/* Spinner animation */
+@keyframes spinner-rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.loading-spinner {
+  animation: spinner-rotate 1s linear infinite;
+  transform-origin: center;
+}
+
+/* ============================================
+   REDUCED MOTION SUPPORT
+   ============================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --duration-fast: 0ms;
+    --duration-normal: 0ms;
+    --duration-slow: 0ms;
+    --duration-slower: 0ms;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  
+  .button-hover:hover {
+    transform: none;
+  }
+}
+
+/* ============================================
+   RESPONSIVE DESIGN TOKENS
+   ============================================ */
+
+/* Tablet (768-1023px) */
+@media (max-width: 1023px) {
+  :root {
+    --panel-width-standard: 320px;
+    --timeline-height-expanded: 200px;
+    --search-field-min-width: 240px;
+  }
+}
+
+/* Mobile (<768px) */
+@media (max-width: 767px) {
+  :root {
+    --search-field-min-width: 0px;
+  }
+}
+

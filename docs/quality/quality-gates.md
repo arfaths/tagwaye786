@@ -2,7 +2,9 @@
 
 **Date:** 2025-11-17  
 **Owner:** DX Engineering  
-**Purpose:** Define the “done” criteria for UI/UX feature work before merge.
+**Purpose:** Define the "done" criteria for UI/UX feature work before merge.
+
+> **Note:** This is a detailed tooling and implementation guide. For a quick release checklist, see [`docs/prd/quality-gates.md`](../prd/quality-gates.md).
 
 ---
 
